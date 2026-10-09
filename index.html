@@ -24,21 +24,22 @@
         content="#f3efe6"
     >
 
-    <title>
-        Mohamed Gamal Ashry | Systems, Software, AI & Business
-    </title>
+    <title>Mohamed Gamal Ashry | Systems, Software, AI & Business</title>
 
-    https://fonts.googleapis.com
-
-    https://fonts.gstatic.com
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
-    nts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap
-
-    <link
-        rel="stylesheet"
-        href="style.css"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
     >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -49,7 +50,11 @@
 
     <header class="site-header" id="top">
 
-        #home
+        <a
+            class="brand"
+            href="#home"
+            aria-label="MG Ashry home"
+        >
             <span class="brand-mark">MG</span>
             <span class="brand-name">Ashry</span>
         </a>
@@ -70,14 +75,17 @@
             id="primary-navigation"
             aria-label="Primary navigation"
         >
-            #aboutAbout</a>
-            #expertiseExpertise</a>
-            #projectsProjects</a>
-            #journeyJourney</a>
-            #contactContact</a>
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#projects">Projects</a>
+            <a href="#journey">Journey</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        #contact
+        <a
+            class="header-cta"
+            href="#contact"
+        >
             Let's connect
             <span aria-hidden="true">↗</span>
         </a>
@@ -91,7 +99,10 @@
              HERO
              ========================= -->
 
-        <section class="hero section" id="home">
+        <section
+            class="hero section"
+            id="home"
+        >
 
             <div class="hero-kicker reveal">
                 Systems · Software · AI · Product · Business
@@ -119,12 +130,18 @@
 
                     <div class="hero-actions">
 
-                        #projects
+                        <a
+                            class="button button-dark"
+                            href="#projects"
+                        >
                             Explore my work
                             <span aria-hidden="true">↘</span>
                         </a>
 
-                        #journey
+                        <a
+                            class="text-link"
+                            href="#journey"
+                        >
                             My journey
                             <span aria-hidden="true">→</span>
                         </a>
@@ -175,7 +192,11 @@
             </div>
 
 
-            #expertise
+            <a
+                class="scroll-cue"
+                href="#expertise"
+                aria-label="Scroll to expertise"
+            >
                 <span>Scroll to explore</span>
                 <span aria-hidden="true">↓</span>
             </a>
@@ -184,7 +205,7 @@
 
 
         <!-- =========================
-             EXPERTISE MARQUEE
+             MOVING EXPERTISE BAR
              ========================= -->
 
         <section
@@ -197,4 +218,310 @@
                 <span>Systems Engineering</span>
                 <i>✦</i>
 
-       
+                <span>Software Engineering</span>
+                <i>✦</i>
+
+                <span>Artificial Intelligence</span>
+                <i>✦</i>
+
+                <span>Product Management</span>
+                <i>✦</i>
+
+                <span>Business Analysis</span>
+                <i>✦</i>
+
+                <!-- Duplicate set for continuous animation -->
+
+                <span aria-hidden="true">
+                    Systems Engineering
+                </span>
+
+                <i aria-hidden="true">✦</i>
+
+                <span aria-hidden="true">
+                    Software Engineering
+                </span>
+
+                <i aria-hidden="true">✦</i>
+
+                <span aria-hidden="true">
+                    Artificial Intelligence
+                </span>
+
+                <i aria-hidden="true">✦</i>
+
+                <span aria-hidden="true">
+                    Product Management
+                </span>
+
+                <i aria-hidden="true">✦</i>
+
+                <span aria-hidden="true">
+                    Business Analysis
+                </span>
+
+                <i aria-hidden="true">✦</i>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERTISE
+             ========================= -->
+
+        <section
+            class="expertise section"
+            id="expertise"
+        >
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">
+                    01 · Expertise
+                </p>
+
+                <h2>
+                    Where engineering meets
+                    <em>business value.</em>
+                </h2>
+
+                <p>
+                    I combine technical depth with structured problem-solving
+                    to connect requirements, software, intelligent tools
+                    and product decisions.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-list">
+
+                <article class="expertise-item reveal">
+
+                    <span class="item-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Systems Engineering
+                        </h3>
+
+                        <p>
+                            Requirements, interfaces, architecture,
+                            verification and validation across complex
+                            technical systems.
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="item-arrow"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </span>
+
+                </article>
+
+
+                <article class="expertise-item reveal">
+
+                    <span class="item-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Software Engineering
+                        </h3>
+
+                        <p>
+                            Design, implementation, testing,
+                            automation, version control and
+                            maintainable engineering workflows.
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="item-arrow"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </span>
+
+                </article>
+
+
+                <article class="expertise-item reveal">
+
+                    <span class="item-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            AI & Automation
+                        </h3>
+
+                        <p>
+                            Applying AI, data and automation to improve
+                            decisions, engineering efficiency and
+                            user outcomes.
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="item-arrow"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </span>
+
+                </article>
+
+
+                <article class="expertise-item reveal">
+
+                    <span class="item-number">
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Product & Business
+                        </h3>
+
+                        <p>
+                            Product thinking, business analysis,
+                            stakeholder needs and the translation
+                            of strategy into actionable solutions.
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="item-arrow"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
+
+        <section
+            class="about section"
+            id="about"
+        >
+
+            <div class="about-card reveal">
+
+                <div class="about-label">
+
+                    <p class="eyebrow">
+                        02 · About
+                    </p>
+
+                    <span class="signature">
+                        MGA
+                    </span>
+
+                </div>
+
+
+                <div class="about-copy">
+
+                    <h2>
+                        I connect the technical details with the
+                        <em>bigger picture.</em>
+                    </h2>
+
+                    <p class="about-lead">
+                        My work is shaped by curiosity, structured
+                        analysis and a practical engineering mindset.
+                    </p>
+
+                    <p>
+                        I am building a multidisciplinary profile across
+                        systems engineering, software, artificial
+                        intelligence, product management and business
+                        analysis. The goal is not to collect unrelated
+                        skills, but to understand how they work together
+                        to create useful, reliable and sustainable
+                        products.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="#journey"
+                    >
+                        Discover my journey
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+             ========================= -->
+
+        <section
+            class="projects section"
+            id="projects"
+        >
+
+            <div class="section-heading section-heading-row reveal">
+
+                <div>
+
+                    <p class="eyebrow">
+                        03 · Selected work
+                    </p>
+
+                    <h2>
+                        Projects that turn learning into
+                        <em>evidence.</em>
+                    </h2>
+
+                </div>
+
+                <p>
+                    Replace these starter cards with your real case
+                    studies, screenshots and GitHub links as the
+                    portfolio grows.
+                </p>
+
+            </div>
+
+
+            <div class="project-grid">
+
+                <!-- Systems project -->
+
+                <article class="project-card project-featured reveal">
+
+                    <div class="project-art art-systems">
+
+                        <span class="art-
