@@ -1,9 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 
-/* =========================
+/* ==================================================
+   DESIGN VARIABLES
+   ================================================== */
+
+:root {
+    --ink: #171714;
+    --ink-soft: #55534c;
+
+    --cream: #f3efe6;
+    --cream-deep: #e7e0d2;
+    --white: #fffdf8;
+
+    --lime: #d9ff43;
+    --orange: #ff603d;
+
+    --line: rgba(23, 23, 20, 0.19);
+
+    --max-width: 1240px;
+
+    --radius-lg: 34px;
+    --radius-md: 22px;
+}
+
+
+/* ==================================================
    RESET
-   ========================= */
+   ================================================== */
 
 * {
     margin: 0;
@@ -13,47 +37,68 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 92px;
 }
-
-
-/* =========================
-   GENERAL
-   ========================= */
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: #0B1120;
-    color: #F8FAFC;
+    font-family: 'DM Sans', sans-serif;
+
+    color: var(--ink);
+    background: var(--cream);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+::selection {
+    color: var(--ink);
+    background: var(--lime);
 }
 
 
-/* =========================
-   HERO
-   ========================= */
+/* ==================================================
+   HEADER AND NAVIGATION
+   ================================================== */
 
-.hero {
-    min-height: 100vh;
+.site-header {
+    width: min(calc(100% - 40px), var(--max-width));
+    height: 76px;
 
-    display: flex;
+    margin: 18px auto 0;
+    padding: 0 14px 0 20px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: center;
 
-    text-align: center;
+    gap: 32px;
 
-    padding: 40px 20px;
+    position: fixed;
+    top: 0;
+    left: 50%;
 
-    position: relative;
-    overflow: hidden;
+    transform: translateX(-50%);
 
-    /* Soft blue glow + subtle technical grid */
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(56, 189, 248, 0.10),
-            transparent 40%
-        ),
-        linear-gradient(
-            rgba(56, 189, 248, 0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient
+    z-index: 50;
+
+    border: 1px solid rgba(23, 23, 20, 0.12);
+    border-radius: 999px;
+
+    background: rgba(243, 239, 230, 0.86);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.
