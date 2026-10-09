@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-/* RESET */
+
+/* =========================
+   RESET
+   ========================= */
 
 * {
     margin: 0;
@@ -13,7 +16,9 @@ html {
 }
 
 
-/* GENERAL */
+/* =========================
+   GENERAL
+   ========================= */
 
 body {
     font-family: 'Inter', sans-serif;
@@ -22,7 +27,9 @@ body {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 
 .hero {
     min-height: 100vh;
@@ -34,87 +41,19 @@ body {
     text-align: center;
 
     padding: 40px 20px;
-}
 
-.hero-content {
-    max-width: 900px;
-}
+    position: relative;
+    overflow: hidden;
 
-
-/* NAME */
-
-.hero-name {
-    font-family: 'Space Grotesk', sans-serif;
-
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 20px;
-}
-
-
-/* THINK. ENGINEER. BUILD. */
-
-.hero-tagline {
-    font-family: 'Space Grotesk', sans-serif;
-
-    color: #38BDF8;
-
-    font-size: 1rem;
-    font-weight: 600;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 30px;
-}
-
-
-/* DESCRIPTION */
-
-.hero-description {
-    font-family: 'Inter', sans-serif;
-
-    color: #94A3B8;
-
-    font-size: 1.25rem;
-    font-weight: 400;
-
-    line-height: 1.8;
-
-    max-width: 760px;
-
-    margin: 0 auto 40px;
-}
-
-
-/* BUTTON CONTAINER */
-
-.hero-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 16px;
-
-    flex-wrap: wrap;
-}
-
-
-/* BUTTON BASE STYLE */
-
-.button {
-    display: inline-block;
-
-    padding: 14px 26px;
-
-    border-radius: 8px;
-
-    text-decoration: none;
-
-    font-family: 'Inter', sans-serif;
-
-    font-weight: 600;
-
-    transition
+    /* Soft blue glow + subtle technical grid */
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(56, 189, 248, 0.10),
+            transparent 40%
+        ),
+        linear-gradient(
+            rgba(56, 189, 248, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient
