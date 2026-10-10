@@ -542,23 +542,34 @@ a:focus-visible {
     margin: 1.2rem 0 1.6rem;
 }
 
-.contact-email {
-    display: inline-flex;
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.6rem;
-    padding-bottom: 0.35rem;
-    border-bottom: 1px solid rgba(131, 170, 255, 0.45);
+    gap: 1.25rem;
+}
+
+.social-link {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.social-link:hover {
+    border-color: rgba(131, 170, 255, 0.6);
+    background: rgba(131, 170, 255, 0.08);
     color: var(--blue);
-    font-size: 0.92rem;
-    transition: color 160ms ease;
 }
 
-.contact-email:hover {
-    color: #b1c9ff;
-}
-
-.contact-email span {
-    font-size: 0.8rem;
+.social-link svg {
+    width: 19px;
+    height: 19px;
+    fill: currentColor;
 }
 
 .site-footer {
