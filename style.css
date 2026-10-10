@@ -144,7 +144,6 @@ a:focus-visible {
 .eyebrow,
 .section-index,
 .scroll-cue,
-.orbit-label,
 .card-number,
 .back-to-top {
     font-family: var(--mono);
@@ -160,29 +159,12 @@ a:focus-visible {
     color: var(--muted);
 }
 
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #77d6ae;
-    box-shadow: 0 0 12px rgba(119, 214, 174, 0.7);
-}
-
 .hero h1 {
     margin: 0;
     font-size: clamp(4rem, 8.4vw, 7.3rem);
     font-weight: 600;
     letter-spacing: -0.085em;
     line-height: 0.98;
-}
-
-.hero-tagline {
-    margin: 1.8rem 0 0;
-    color: var(--blue);
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
 }
 
 .hero-description {
@@ -270,9 +252,7 @@ a:focus-visible {
 }
 
 .impact-kicker,
-.impact-status,
-.result-label,
-.impact-panel-footer {
+.result-label {
     font-family: var(--mono);
     font-size: 0.56rem;
     letter-spacing: 0.08em;
@@ -280,22 +260,6 @@ a:focus-visible {
 
 .impact-kicker {
     color: #d6e1f5;
-}
-
-.impact-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.38rem;
-    color: #98a8c1;
-    font-size: 0.48rem;
-}
-
-.impact-status span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #71d8ad;
-    box-shadow: 0 0 10px rgba(113, 216, 173, 0.55);
 }
 
 .impact-flow {
@@ -431,19 +395,6 @@ a:focus-visible {
     color: #a8c8bc;
     font-size: 0.52rem;
     line-height: 1.4;
-}
-
-.impact-panel-footer {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.85rem;
-    color: #8c9db6;
-    font-size: 0.49rem;
-}
-
-.impact-panel-footer span:nth-child(even) {
-    color: #657997;
 }
 
 .scroll-cue {
@@ -854,12 +805,6 @@ a:focus-visible {
         margin-top: 0.2rem;
     }
 
-    .impact-panel-footer {
-        justify-content: center;
-        gap: 0.4rem;
-        font-size: 0.45rem;
-    }
-
     .scroll-cue {
         bottom: 2rem;
     }
@@ -930,10 +875,6 @@ a:focus-visible {
 
     .impact-kicker {
         font-size: 0.5rem;
-    }
-
-    .impact-status {
-        font-size: 0.43rem;
     }
 
     .main-nav {
