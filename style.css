@@ -20,7 +20,6 @@ html {
 }
 
 body {
-    min-width: 320px;
     margin: 0;
     background:
         radial-gradient(ellipse at 78% 17%, rgba(43, 83, 157, 0.19), transparent 30rem),
@@ -87,12 +86,9 @@ a:focus-visible {
 .wordmark {
     font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: -0.08em;
+    letter-spacing: -0.055em;
 }
 
-.wordmark span,
-.period,
-.name-accent,
 .about-content h2 span,
 .focus-heading h2 span,
 .contact h2 span {
@@ -454,7 +450,7 @@ a:focus-visible {
 }
 
 .card-number {
-    color: #73809a;
+    color: #8492ac;
 }
 
 .card-icon {
@@ -606,13 +602,36 @@ a:focus-visible {
     font-size: 0.58rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+    .hero {
+        display: grid;
+        min-height: auto;
+        align-items: start;
+        gap: 2rem;
+        padding-block: 5rem 6rem;
+    }
+
+    .hero-copy {
+        max-width: 100%;
+    }
+
     .hero-art {
-        right: -2%;
-        width: 34vw;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: clamp(180px, 26vw, 240px);
+        justify-self: end;
+        margin-right: 1rem;
+        transform: none;
         opacity: 0.58;
     }
 
+    .scroll-cue {
+        bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
     .focus-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -633,11 +652,16 @@ a:focus-visible {
     }
 
     .site-header {
-        height: 74px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 0.85rem 1rem;
+        padding-block: 1rem;
     }
 
     .main-nav {
-        gap: 1.1rem;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.75rem;
         font-size: 0.74rem;
     }
 
@@ -646,10 +670,9 @@ a:focus-visible {
     }
 
     .hero {
-        min-height: 700px;
-        min-height: min(760px, calc(100svh - 74px));
-        align-items: flex-start;
-        padding-top: 7rem;
+        min-height: auto;
+        gap: 1.5rem;
+        padding-block: 4rem 6rem;
     }
 
     .hero h1 {
@@ -662,11 +685,8 @@ a:focus-visible {
     }
 
     .hero-art {
-        top: auto;
-        right: 0;
-        bottom: 5rem;
-        width: 190px;
-        transform: none;
+        width: clamp(150px, 42vw, 190px);
+        margin-right: 0.5rem;
         opacity: 0.48;
     }
 
@@ -705,11 +725,12 @@ a:focus-visible {
     }
 
     .focus-grid {
+        grid-template-columns: 1fr;
         margin-top: 2rem;
     }
 
     .focus-card {
-        min-height: 280px;
+        min-height: 230px;
         padding: 1.2rem;
     }
 
@@ -735,6 +756,14 @@ a:focus-visible {
     .section-shell,
     .site-header {
         width: calc(100% - 32px);
+    }
+
+    .hero-art {
+        margin-right: 1.5rem;
+    }
+
+    .label-right {
+        right: -1rem;
     }
 
     .main-nav {
