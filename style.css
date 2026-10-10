@@ -542,10 +542,23 @@ a:focus-visible {
     margin: 1.2rem 0 1.6rem;
 }
 
-.contact-note {
-    margin-top: 0.75rem;
-    color: #77849c;
-    font-size: 0.7rem;
+.contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(131, 170, 255, 0.45);
+    color: var(--blue);
+    font-size: 0.92rem;
+    transition: color 160ms ease;
+}
+
+.contact-email:hover {
+    color: #b1c9ff;
+}
+
+.contact-email span {
+    font-size: 0.8rem;
 }
 
 .site-footer {

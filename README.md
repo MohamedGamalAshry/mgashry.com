@@ -9,7 +9,8 @@ Open `index.html` in a browser, or serve the repository directory with any stati
 ## Personalize before publishing
 
 - Update the biography and areas of focus in `index.html` to match your experience and current work.
-- Add an email address or professional profile link in the contact section.
+- The contact section currently links to `mga.ashry@gmail.com`; update its `mailto:` link and displayed address together if you change it.
+- Add a LinkedIn profile link when you have the profile URL you want to share.
 - Replace the Open Graph title and description in the document head if you change the site's introduction.
 
 The site uses Space Grotesk and DM Mono from Google Fonts, with system-font fallbacks if those fonts cannot load.
