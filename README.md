@@ -5,6 +5,7 @@ A responsive, single-page personal website for Mohamed Gamal Ashry. It uses plai
 ## Pages
 
 - `index.html` — portfolio homepage
+- `projects.html` — projects page placeholder, ready for project details
 - `privacy-policy.html` — privacy information for the current static site
 - `terms.html` — terms for using the website
 
