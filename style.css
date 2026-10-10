@@ -638,7 +638,7 @@ a:focus-visible {
     color: #84b9ff;
 }
 
-.site-footer {
+.site-footer-main {
     display: flex;
     min-height: 100px;
     align-items: center;
@@ -646,7 +646,7 @@ a:focus-visible {
     border-top: 1px solid var(--line);
 }
 
-.site-footer p {
+.site-footer-main p {
     color: #77849c;
     font-size: 0.75rem;
 }
@@ -654,6 +654,102 @@ a:focus-visible {
 .back-to-top {
     color: var(--muted);
     font-size: 0.58rem;
+}
+
+.legal-bar {
+    background: #151e2b;
+}
+
+.legal-bar-inner {
+    display: flex;
+    min-height: 64px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.legal-bar-inner p {
+    margin: 0;
+    color: #c0cada;
+    font-size: 0.78rem;
+}
+
+.legal-bar-inner nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.legal-bar-inner a {
+    color: #c0cada;
+    font-size: 0.78rem;
+    transition: color 160ms ease;
+}
+
+.legal-bar-inner a:hover {
+    color: var(--text);
+}
+
+.legal-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.legal-content {
+    width: min(820px, calc(100% - 96px));
+    margin-inline: auto;
+    padding-block: clamp(4rem, 9vw, 7.5rem);
+}
+
+.legal-content .eyebrow {
+    margin-bottom: 1rem;
+}
+
+.legal-content h1 {
+    margin: 0;
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    font-weight: 600;
+    letter-spacing: -0.075em;
+    line-height: 1;
+}
+
+.legal-updated {
+    margin: 1rem 0 3rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.legal-content h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+.legal-content p,
+.legal-content li {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.legal-content ul {
+    padding-left: 1.25rem;
+}
+
+.legal-content a:not(.button) {
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.legal-back {
+    margin-top: 3rem;
+}
+
+.legal-footer {
+    margin-top: auto;
 }
 
 @media (max-width: 1100px) {
@@ -854,12 +950,28 @@ a:focus-visible {
         gap: 2rem;
     }
 
-    .site-footer {
+    .site-footer-main {
         min-height: 85px;
     }
 
-    .site-footer p {
+    .site-footer-main p {
         display: none;
+    }
+
+    .legal-bar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.65rem;
+        padding-block: 1.1rem;
+    }
+
+    .legal-bar-inner nav {
+        gap: 1rem;
+    }
+
+    .legal-content {
+        width: min(100% - 40px, 520px);
     }
 }
 
