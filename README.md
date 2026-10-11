@@ -6,6 +6,7 @@ A responsive personal website for Mohamed Gamal Ashry. It uses plain HTML, CSS, 
 
 - `index.html` — portfolio homepage
 - `projects.html` — projects page placeholder, ready for project details
+- `certificates.html` — learning portfolio for certificates, completed training, and self-studied courses
 - `privacy-policy.html` — privacy information for the current static site
 - `terms.html` — terms for using the website
 

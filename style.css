@@ -1635,6 +1635,13 @@ a:focus-visible {
     box-shadow: 0 0 12px rgba(131, 170, 255, 0.8);
 }
 
+.certificate-status {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
 .coming-soon-content h1 {
     margin: 1.4rem 0 0;
     font-size: clamp(3rem, 8vw, 6.25rem);
@@ -1663,6 +1670,37 @@ a:focus-visible {
     line-height: 1.8;
 }
 
+.certificate-types {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.certificate-type {
+    min-width: 0;
+    padding: 1.15rem;
+    border: 1px solid rgba(131, 170, 255, 0.17);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(21, 32, 52, 0.86), rgba(12, 19, 34, 0.9));
+}
+
+.certificate-type h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.certificate-type p {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.65;
+}
+
 .coming-soon-steps {
     display: flex;
     align-items: center;
@@ -1682,11 +1720,16 @@ a:focus-visible {
 .coming-soon-actions {
     display: flex;
     justify-content: center;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
 .coming-soon-actions .button {
     min-width: 170px;
+}
+
+.coming-soon-actions .text-link {
+    align-self: center;
 }
 
 @keyframes rocket-hover {
@@ -2297,6 +2340,16 @@ a:focus-visible {
 
     .coming-soon-description {
         font-size: 0.88rem;
+    }
+
+    .certificate-types {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+        margin-top: 1.5rem;
+    }
+
+    .certificate-type {
+        padding: 1rem;
     }
 
     .coming-soon-steps {
