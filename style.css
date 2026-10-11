@@ -252,15 +252,15 @@ a:focus-visible {
     transition:
         opacity 560ms ease var(--reveal-delay, 0ms),
         translate 560ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms),
-        background 180ms ease,
-        box-shadow 180ms ease,
-        transform 180ms ease;
+        background 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        transform 220ms ease;
 }
 
 .eyebrow,
 .section-index,
 .scroll-cue,
-.card-number,
 .back-to-top {
     font-family: var(--mono);
     font-size: 0.66rem;
@@ -624,97 +624,77 @@ a:focus-visible {
 
 .focus-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
     margin-top: 3.5rem;
-    border: 1px solid var(--line);
-    background: var(--line);
 }
 
 .focus-card {
     position: relative;
-    min-height: 290px;
-    padding: 1.5rem;
-    background: var(--bg-raised);
-    transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    display: flex;
+    min-height: 180px;
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 4rem);
+    overflow: hidden;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid rgba(135, 163, 215, 0.17);
+    border-radius: 1rem;
+    background:
+        radial-gradient(ellipse at 8% 50%, rgba(76, 123, 211, 0.13), transparent 42%),
+        linear-gradient(110deg, rgba(22, 34, 57, 0.96), rgba(16, 24, 43, 0.86));
+    transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 
 .focus-card:hover {
     z-index: 1;
-    transform: translateY(-4px);
-    background: linear-gradient(145deg, #182641, #131d32);
-    box-shadow: inset 0 0 0 1px rgba(131, 170, 255, 0.16), 0 14px 34px rgba(0, 0, 0, 0.2);
-}
-
-.card-number {
-    color: #8492ac;
+    transform: translateX(5px);
+    border-color: rgba(131, 170, 255, 0.42);
+    background:
+        radial-gradient(ellipse at 8% 50%, rgba(76, 123, 211, 0.21), transparent 48%),
+        linear-gradient(110deg, #192944, #131d32);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(131, 170, 255, 0.08);
 }
 
 .card-icon {
     display: grid;
-    width: 45px;
-    height: 45px;
+    width: clamp(76px, 10vw, 112px);
+    height: clamp(76px, 10vw, 112px);
+    flex: 0 0 auto;
     place-items: center;
-    margin-top: 2rem;
-    color: var(--blue);
+    color: #8db7ff;
+    filter: drop-shadow(0 0 18px rgba(91, 151, 255, 0.22));
 }
 
-.icon-systems {
-    position: relative;
-    grid-template-columns: repeat(2, 7px);
-    grid-template-rows: repeat(2, 7px);
-    gap: 8px;
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
 }
 
-.icon-systems span {
-    width: 7px;
-    height: 7px;
-    border: 1px solid var(--blue);
-    border-radius: 2px;
+.card-icon svg circle {
+    fill: #17253e;
 }
 
-.icon-software span {
-    font-family: var(--mono);
-    font-size: 1.25rem;
-}
-
-.icon-ai span {
-    font-size: 2rem;
-}
-
-.icon-business span {
-    width: 24px;
-    height: 24px;
-    border: 1px solid var(--blue);
-    border-radius: 50%;
-    box-shadow: 9px 0 0 -5px var(--bg-raised), 9px 0 0 -4px var(--blue), -9px 0 0 -5px var(--bg-raised), -9px 0 0 -4px var(--blue);
+.focus-card-copy {
+    max-width: 680px;
 }
 
 .focus-card h3 {
-    margin: 1.15rem 0 0.5rem;
-    font-size: 1rem;
-    font-weight: 500;
+    margin: 0 0 0.55rem;
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+    font-weight: 550;
+    letter-spacing: -0.035em;
 }
 
 .focus-card p {
     margin: 0;
-    font-size: 0.8rem;
-    line-height: 1.7;
-}
-
-.card-arrow {
-    position: absolute;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    color: var(--blue);
+    max-width: 58ch;
     font-size: 0.9rem;
-    opacity: 0;
-    transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.focus-card:hover .card-arrow {
-    opacity: 1;
-    transform: translate(2px, -2px);
+    line-height: 1.75;
 }
 
 .contact {
@@ -1155,14 +1135,6 @@ a:focus-visible {
 }
 
 @media (max-width: 900px) {
-    .focus-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .focus-card {
-        min-height: 275px;
-    }
-
     .about-content {
         gap: 2.5rem;
     }
@@ -1446,17 +1418,19 @@ a:focus-visible {
     }
 
     .focus-grid {
-        grid-template-columns: 1fr;
         margin-top: 2rem;
     }
 
     .focus-card {
-        min-height: 230px;
-        padding: 1.2rem;
+        min-height: 150px;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
     }
 
-    .focus-card p {
-        font-size: 0.76rem;
+    .card-icon {
+        width: 58px;
+        height: 58px;
     }
 
     .contact {
