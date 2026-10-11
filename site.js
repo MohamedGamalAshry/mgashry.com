@@ -7,13 +7,12 @@ if (journey) {
     const slides = Array.from(journey.querySelectorAll(".journey-slide"));
     const pagination = document.querySelector(".journey-pagination");
     const pageButtons = pagination ? Array.from(pagination.querySelectorAll("button")) : [];
-    const currentLabel = document.querySelector(".journey-current");
     const previousButton = document.querySelector(".journey-prev");
     const nextButton = document.querySelector(".journey-next");
     const playButton = document.querySelector(".journey-play");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    if (track && slides.length && pageButtons.length === slides.length && currentLabel && previousButton && nextButton && playButton) {
+    if (track && slides.length && pageButtons.length === slides.length && previousButton && nextButton && playButton) {
         let activeIndex = 0;
         let userPaused = reducedMotion.matches;
         let hovered = false;
@@ -46,9 +45,6 @@ if (journey) {
                 slide.setAttribute("aria-hidden", String(!isActive));
                 pageButtons[slideIndex].setAttribute("aria-current", isActive ? "step" : "false");
             });
-            const label = pageButtons[activeIndex].getAttribute("aria-label").replace(/^Show /, "");
-            currentLabel.textContent = label.charAt(0).toUpperCase() + label.slice(1);
-
             if (shouldScroll) {
                 track.scrollTo({ left: slides[activeIndex].offsetLeft, behavior: reducedMotion.matches ? "auto" : behavior });
             }
