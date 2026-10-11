@@ -1,6 +1,6 @@
 # mgashry.com
 
-A responsive, single-page personal website for Mohamed Gamal Ashry. It uses plain HTML and CSS, so it can be hosted directly on GitHub Pages or any static web host without a build step.
+A responsive personal website for Mohamed Gamal Ashry. It uses plain HTML, CSS, and a small JavaScript file for shared header behavior, so it can be hosted directly on GitHub Pages or any static web host without a build step.
 
 ## Pages
 
@@ -10,6 +10,8 @@ A responsive, single-page personal website for Mohamed Gamal Ashry. It uses plai
 - `terms.html` — terms for using the website
 
 The legal pages describe the site's current features and third-party links. Review them against your hosting setup and applicable requirements before relying on them as formal legal documents. Update the copyright year in the page footers when needed.
+
+The shared navigation stays pinned at the top while scrolling. After a short scroll, the name collapses and the navigation pills expand; the Projects "Coming soon" status also highlights on hover.
 
 ## Preview locally
 
