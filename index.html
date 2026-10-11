@@ -81,17 +81,9 @@
                                         <span class="discipline-ai"><i></i>Applied AI</span>
                                         <span class="discipline-product"><i></i>Business &amp; product</span>
                                     </div>
-                                    <svg class="approach-connections" viewBox="0 0 480 250" fill="none">
-                                        <path d="M128 34h34q28 0 48 24l35 42m-117-37h39q26 0 44 21l34 32m-117 12h117m-117 37h39q26 0 44-21l34-32m-117 61h34q28 0 48-24l35-42m0 0h110"></path>
-                                        <circle cx="128" cy="34" r="3"></circle>
-                                        <circle cx="128" cy="63" r="3"></circle>
-                                        <circle cx="128" cy="125" r="3"></circle>
-                                        <circle cx="128" cy="187" r="3"></circle>
-                                        <circle cx="128" cy="216" r="3"></circle>
-                                        <circle cx="245" cy="125" r="31"></circle>
-                                        <circle cx="245" cy="125" r="23"></circle>
-                                        <circle class="approach-core-dot" cx="245" cy="125" r="4"></circle>
-                                        <path class="approach-outcome-line" d="M276 125h110m-9-6 9 6-9 6"></path>
+                                    <svg class="approach-connections" viewBox="0 0 480 250" preserveAspectRatio="none" fill="none">
+                                        <path d="M0 50 C76 50 137 125 201 125 M0 100 C77 100 140 125 201 125 M0 150 C77 150 140 125 201 125 M0 200 C76 200 137 125 201 125"></path>
+                                        <path class="approach-outcome-line" d="M289 125h97m-9-6 9 6-9 6"></path>
                                     </svg>
                                     <div class="approach-core-label">CLARITY</div>
                                     <div class="approach-outcome">
@@ -118,22 +110,66 @@
                             <p class="journey-note">Map relationships. Reveal constraints. Make better decisions.</p>
                         </div>
                         <div class="journey-visual network-visual" aria-hidden="true">
-                            <svg viewBox="0 0 420 340" fill="none">
-                                <path class="network-path" d="m112 95 93-44 104 62-8 116-102 58-96-54 9-138Zm93-44-1 186m-92-142 188 134m9-116L103 233m-86-80 104-58m196 18 76-43m-84 159 78 47m-206 31-48 39m138-18 6 70"></path>
-                                <circle class="network-point point-blue" cx="112" cy="95" r="13"></circle>
-                                <circle class="network-point point-cyan" cx="205" cy="51" r="17"></circle>
-                                <circle class="network-point point-violet" cx="309" cy="113" r="13"></circle>
-                                <circle class="network-point point-blue" cx="301" cy="229" r="18"></circle>
-                                <circle class="network-point point-gold" cx="199" cy="287" r="13"></circle>
-                                <circle class="network-point point-cyan" cx="103" cy="233" r="17"></circle>
-                                <circle class="network-point point-violet" cx="205" cy="144" r="9"></circle>
-                                <circle class="network-point point-blue" cx="17" cy="153" r="6"></circle>
-                                <circle class="network-point point-cyan" cx="385" cy="70" r="7"></circle>
-                                <circle class="network-point point-gold" cx="379" cy="276" r="7"></circle>
-                                <circle class="network-point point-violet" cx="151" cy="356" r="6"></circle>
-                                <circle class="network-point point-blue" cx="205" cy="357" r="6"></circle>
+                            <svg class="systems-map" viewBox="0 0 480 340" fill="none">
+                                <defs>
+                                    <pattern id="systems-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                                        <path d="M24 0H0v24" class="systems-grid-line"></path>
+                                    </pattern>
+                                    <marker id="systems-arrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+                                        <path d="m1 1 4 2.5L1 6" class="systems-arrowhead"></path>
+                                    </marker>
+                                </defs>
+                                <rect class="systems-map-surface" x="1" y="1" width="478" height="338" rx="18"></rect>
+                                <rect x="1" y="1" width="478" height="338" rx="18" fill="url(#systems-grid)"></rect>
+                                <text class="systems-map-kicker" x="25" y="31">SYSTEM MAP</text>
+                                <circle class="systems-live-dot" cx="355" cy="27" r="3"></circle>
+                                <text class="systems-map-status" x="366" y="30">FEEDBACK LOOP ACTIVE</text>
+                                <path class="systems-flow" d="M165 107H315" marker-end="url(#systems-arrow)"></path>
+                                <path class="systems-flow" d="M384 140V198" marker-end="url(#systems-arrow)"></path>
+                                <path class="systems-flow" d="M315 231H165" marker-end="url(#systems-arrow)"></path>
+                                <path class="systems-flow" d="M96 198V140" marker-end="url(#systems-arrow)"></path>
+                                <text class="systems-flow-label" x="239" y="98" text-anchor="middle">INFLUENCE</text>
+                                <text class="systems-flow-label" x="396" y="172">EFFECT</text>
+                                <text class="systems-flow-label" x="240" y="250" text-anchor="middle">FEEDBACK</text>
+                                <text class="systems-flow-label" x="26" y="172">NEEDS</text>
+                                <path class="systems-leverage-link" d="M240 122v18m0 58v18"></path>
+                                <circle class="systems-leverage-halo" cx="240" cy="169" r="38"></circle>
+                                <circle class="systems-leverage-core" cx="240" cy="169" r="27"></circle>
+                                <path class="systems-leverage-spark" d="m240 155 3.5 10.5L254 169l-10.5 3.5L240 183l-3.5-10.5L226 169l10.5-3.5L240 155Z"></path>
+                                <text class="systems-leverage-label" x="240" y="210" text-anchor="middle">LEVERAGE POINT</text>
+                                <g class="systems-node systems-node-people">
+                                    <rect x="27" y="76" width="138" height="64" rx="11"></rect>
+                                    <circle class="systems-node-icon" cx="48" cy="101" r="7"></circle>
+                                    <path class="systems-node-icon" d="M37 120c1.5-7 5-10 11-10s9.5 3 11 10"></path>
+                                    <text class="systems-node-overline" x="67" y="100">PEOPLE</text>
+                                    <text class="systems-node-label" x="67" y="118">Needs &amp; choices</text>
+                                </g>
+                                <g class="systems-node systems-node-process">
+                                    <rect x="315" y="76" width="138" height="64" rx="11"></rect>
+                                    <circle class="systems-node-icon" cx="337" cy="98" r="4"></circle>
+                                    <circle class="systems-node-icon" cx="348" cy="108" r="4"></circle>
+                                    <circle class="systems-node-icon" cx="337" cy="119" r="4"></circle>
+                                    <path class="systems-node-icon" d="m340 101 5 5m-5 9 5-5"></path>
+                                    <text class="systems-node-overline" x="361" y="100">PROCESS</text>
+                                    <text class="systems-node-label" x="361" y="118">How work flows</text>
+                                </g>
+                                <g class="systems-node systems-node-outcomes">
+                                    <rect x="315" y="198" width="138" height="64" rx="11"></rect>
+                                    <path class="systems-node-icon" d="M335 242v-12h6v12m4 0v-20h6v20m4 0v-8h6v8"></path>
+                                    <text class="systems-node-overline" x="367" y="222">OUTCOMES</text>
+                                    <text class="systems-node-label" x="367" y="240">What changes</text>
+                                </g>
+                                <g class="systems-node systems-node-technology">
+                                    <rect x="27" y="198" width="138" height="64" rx="11"></rect>
+                                    <rect class="systems-node-icon" x="37" y="216" width="22" height="16" rx="2"></rect>
+                                    <path class="systems-node-icon" d="M42 237h12m-6-5v5"></path>
+                                    <text class="systems-node-overline" x="67" y="222">TECHNOLOGY</text>
+                                    <text class="systems-node-label" x="67" y="240">Tools &amp; systems</text>
+                                </g>
+                                <path class="systems-map-divider" d="M24 289h432"></path>
+                                <text class="systems-map-footer" x="25" y="311">CHANGE ONE PART. WATCH THE WHOLE SYSTEM RESPOND.</text>
                             </svg>
-                            <span class="visual-caption">EVERYTHING IS CONNECTED</span>
+                            <span class="visual-caption">SEE THE CONNECTIONS. FIND THE LEVERAGE.</span>
                         </div>
                     </article>
 
@@ -202,14 +238,16 @@
                             <p class="journey-note">Start with people. Align on outcomes. Deliver lasting value.</p>
                         </div>
                         <div class="journey-visual product-visual" aria-hidden="true">
-                            <div class="product-axis"><span>USER VALUE</span><span>BUSINESS GOALS</span></div>
                             <div class="product-diagram">
+                                <svg class="product-connections" viewBox="0 0 340 340" fill="none">
+                                    <path d="M52 105C69 155 119 184 170 220M170 105v115m118-115c-17 50-67 79-118 115"></path>
+                                </svg>
                                 <div class="product-circle circle-user"><span>USER<br>NEEDS</span></div>
                                 <div class="product-circle circle-tech"><span>TECH<br>CAPABILITY</span></div>
                                 <div class="product-circle circle-business"><span>BUSINESS<br>VALUE</span></div>
-                                <div class="product-center"><span>THE<br>RIGHT<br>PRODUCT</span></div>
+                                <div class="product-center"><span>USEFUL<br>PRODUCT</span></div>
                             </div>
-                            <span class="visual-caption">ALIGN THE PARTS. CREATE VALUE.</span>
+                            <span class="visual-caption">ALIGN CUSTOMER NEEDS, CAPABILITY &amp; VALUE.</span>
                         </div>
                     </article>
 

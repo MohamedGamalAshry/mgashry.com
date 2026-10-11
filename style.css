@@ -453,7 +453,10 @@ a:focus-visible {
 
 .approach-panel {
     position: absolute;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 24px);
+    max-width: 520px;
     padding: 1.15rem;
     overflow: hidden;
     border: 1px solid rgba(145, 177, 235, 0.2);
@@ -462,6 +465,7 @@ a:focus-visible {
         radial-gradient(ellipse at 50% 48%, rgba(79, 118, 194, 0.13), transparent 50%),
         linear-gradient(145deg, rgba(17, 27, 46, 0.98), rgba(10, 17, 30, 0.98));
     box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transform: translate(-50%, -50%);
 }
 
 .approach-panel::before {
@@ -512,21 +516,23 @@ a:focus-visible {
 .approach-diagram {
     position: relative;
     display: grid;
-    min-height: 250px;
+    min-height: 280px;
     grid-template-columns: 31% 1fr 22%;
     align-items: center;
     margin-block: 0.7rem;
 }
 
 .approach-disciplines {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 1;
-    grid-column: 1;
-    display: grid;
-    gap: 1.15rem;
+    pointer-events: none;
 }
 
 .approach-disciplines span {
+    position: absolute;
+    top: var(--discipline-y);
+    left: 0;
     display: flex;
     min-width: 0;
     align-items: center;
@@ -535,6 +541,8 @@ a:focus-visible {
     font-size: 0.62rem;
     font-weight: 500;
     line-height: 1.2;
+    white-space: nowrap;
+    transform: translateY(-50%);
 }
 
 .approach-disciplines i {
@@ -548,18 +556,22 @@ a:focus-visible {
 
 .discipline-systems {
     --discipline-accent: #83aaff;
+    --discipline-y: 20%;
 }
 
 .discipline-software {
     --discipline-accent: #65d9e9;
+    --discipline-y: 40%;
 }
 
 .discipline-ai {
     --discipline-accent: #bd9aff;
+    --discipline-y: 60%;
 }
 
 .discipline-product {
     --discipline-accent: #f2bb72;
+    --discipline-y: 80%;
 }
 
 .approach-connections {
@@ -568,49 +580,12 @@ a:focus-visible {
     width: 100%;
     height: 100%;
     overflow: visible;
+    pointer-events: none;
 }
 
 .approach-connections path {
     stroke: rgba(137, 174, 238, 0.38);
     stroke-width: 1;
-}
-
-.approach-connections circle {
-    fill: #17243a;
-    stroke: #83aaff;
-    stroke-width: 1.5;
-}
-
-.approach-connections circle:nth-of-type(2) {
-    stroke: #65d9e9;
-}
-
-.approach-connections circle:nth-of-type(3) {
-    stroke: #bd9aff;
-}
-
-.approach-connections circle:nth-of-type(4) {
-    stroke: #f2bb72;
-}
-
-.approach-connections circle:nth-of-type(5) {
-    stroke: #73e0bd;
-}
-
-.approach-connections circle:nth-of-type(6) {
-    fill: #131e33;
-    stroke: rgba(131, 170, 255, 0.4);
-}
-
-.approach-connections circle:nth-of-type(7) {
-    fill: none;
-    stroke: rgba(198, 218, 255, 0.72);
-    stroke-width: 1.2;
-}
-
-.approach-connections .approach-core-dot {
-    fill: #a9c8ff;
-    stroke: none;
 }
 
 .approach-connections .approach-outcome-line {
@@ -627,6 +602,30 @@ a:focus-visible {
     font-size: 0.65rem;
     letter-spacing: 0.06em;
     transform: translate(-50%, -50%);
+}
+
+.approach-core-label::before,
+.approach-core-label::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.approach-core-label::before {
+    width: 88px;
+    border: 1px solid rgba(131, 170, 255, 0.4);
+    background: #131e33;
+    z-index: -1;
+}
+
+.approach-core-label::after {
+    width: 72px;
+    border: 1.2px solid rgba(198, 218, 255, 0.72);
 }
 
 .approach-outcome {
@@ -690,10 +689,132 @@ a:focus-visible {
     width: min(100%, 420px);
 }
 
-.network-path {
-    stroke: rgba(140, 175, 243, 0.36);
-    stroke-dasharray: 5 7;
+.systems-map .systems-map-surface {
+    fill: rgba(12, 20, 36, 0.92);
+    stroke: rgba(131, 170, 255, 0.24);
+}
+
+.systems-map .systems-grid-line {
+    stroke: rgba(131, 170, 255, 0.045);
     stroke-width: 1;
+}
+
+.systems-map-kicker,
+.systems-map-status,
+.systems-flow-label,
+.systems-node-overline,
+.systems-map-footer,
+.systems-leverage-label {
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+}
+
+.systems-map-kicker {
+    fill: #d7e4fa;
+    font-size: 8px;
+}
+
+.systems-map-status {
+    fill: #8294af;
+    font-size: 6px;
+}
+
+.systems-live-dot {
+    fill: #73e0bd;
+    filter: drop-shadow(0 0 4px rgba(115, 224, 189, 0.8));
+}
+
+.systems-flow {
+    stroke: rgba(131, 170, 255, 0.65);
+    stroke-width: 1.5;
+}
+
+.systems-arrowhead {
+    fill: none;
+    stroke: #a9c5ff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.2;
+}
+
+.systems-flow-label {
+    fill: #7385a1;
+    font-size: 5.5px;
+}
+
+.systems-leverage-link {
+    stroke: rgba(115, 224, 189, 0.56);
+    stroke-dasharray: 2 4;
+}
+
+.systems-leverage-halo {
+    fill: rgba(115, 224, 189, 0.045);
+    stroke: rgba(115, 224, 189, 0.16);
+}
+
+.systems-leverage-core {
+    fill: #152b35;
+    stroke: #73e0bd;
+    stroke-width: 1.2;
+    filter: drop-shadow(0 0 10px rgba(115, 224, 189, 0.16));
+}
+
+.systems-leverage-spark {
+    fill: none;
+    stroke: #a3f0d5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.3;
+}
+
+.systems-leverage-label {
+    fill: #9adbc5;
+    font-size: 5px;
+}
+
+.systems-node rect:first-child {
+    fill: rgba(20, 31, 51, 0.95);
+    stroke: rgba(131, 170, 255, 0.28);
+}
+
+.systems-node-overline {
+    fill: #dce7f8;
+    font-size: 7px;
+}
+
+.systems-node-label {
+    fill: #8596b0;
+    font-family: var(--sans);
+    font-size: 8px;
+}
+
+.systems-node-icon {
+    fill: none;
+    stroke: #83aaff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.4;
+}
+
+.systems-node-process .systems-node-icon {
+    stroke: #65d9e9;
+}
+
+.systems-node-technology .systems-node-icon {
+    stroke: #bd9aff;
+}
+
+.systems-node-outcomes .systems-node-icon {
+    stroke: #f2bb72;
+}
+
+.systems-map-divider {
+    stroke: rgba(161, 189, 234, 0.14);
+}
+
+.systems-map-footer {
+    fill: #7788a5;
+    font-size: 6px;
 }
 
 .network-point {
@@ -887,64 +1008,72 @@ a:focus-visible {
     min-height: 410px;
 }
 
-.product-axis {
-    position: absolute;
-    top: 10%;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    color: #9a8c78;
-    font-family: var(--mono);
-    font-size: 0.5rem;
-    letter-spacing: 0.08em;
-}
-
 .product-diagram {
     position: relative;
     width: min(88%, 340px);
     aspect-ratio: 1;
 }
 
+.product-connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.product-connections path {
+    stroke: rgba(201, 182, 155, 0.62);
+    stroke-width: 1.4;
+}
+
 .product-circle {
     position: absolute;
+    z-index: 1;
+    top: 0;
     display: grid;
-    width: 62%;
+    width: 30%;
     aspect-ratio: 1;
     place-items: center;
     border: 1px solid color-mix(in srgb, var(--circle-color) 64%, transparent);
     border-radius: 50%;
     background: color-mix(in srgb, var(--circle-color) 10%, transparent);
     color: #eee5d8;
+}
+
+.product-circle span {
+    display: block;
+    width: 92%;
     font-family: var(--mono);
-    font-size: 0.56rem;
-    letter-spacing: 0.08em;
-    line-height: 1.7;
+    font-size: clamp(0.52rem, 0.75vw, 0.68rem);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
     text-align: center;
 }
 
 .circle-user {
     --circle-color: #83aaff;
-    top: 0;
-    left: 19%;
+    left: 1%;
 }
 
 .circle-tech {
     --circle-color: #65d9e9;
-    bottom: 2%;
-    left: 0;
+    left: 35%;
+}
+
+.circle-tech span {
+    letter-spacing: 0;
 }
 
 .circle-business {
     --circle-color: #f2bb72;
-    right: 0;
-    bottom: 2%;
+    right: 1%;
 }
 
 .product-center {
     position: absolute;
     z-index: 1;
-    top: 39%;
+    top: 62%;
     left: 37%;
     display: grid;
     width: 26%;
@@ -956,8 +1085,8 @@ a:focus-visible {
     box-shadow: 0 0 28px rgba(242, 187, 114, 0.16);
     color: #ffe0b2;
     font-family: var(--mono);
-    font-size: 0.49rem;
-    line-height: 1.4;
+    font-size: clamp(0.56rem, 0.7vw, 0.66rem);
+    line-height: 1.5;
     text-align: center;
 }
 
@@ -2296,12 +2425,8 @@ a:focus-visible {
     }
 
     .approach-diagram {
-        min-height: 230px;
+        min-height: 250px;
         margin-block: 0.35rem;
-    }
-
-    .approach-disciplines {
-        gap: 1rem;
     }
 
     .approach-disciplines span {
@@ -2315,7 +2440,17 @@ a:focus-visible {
     }
 
     .approach-core-label {
-        font-size: 0.54rem;
+        left: 59%;
+        font-size: 0.38rem;
+        letter-spacing: 0.02em;
+    }
+
+    .approach-core-label::before {
+        width: 72px;
+    }
+
+    .approach-core-label::after {
+        width: 60px;
     }
 
     .approach-outcome {
@@ -2442,6 +2577,10 @@ a:focus-visible {
     .coming-soon-steps {
         gap: 0.38rem;
         font-size: 0.43rem;
+    }
+
+    .product-circle span {
+        font-size: 0.48rem;
     }
 
     .hero-actions {
