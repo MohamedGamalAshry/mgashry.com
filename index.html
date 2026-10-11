@@ -182,16 +182,7 @@
                     </article>
                 </div>
             </div>
-            <div class="journey-controls" role="group" aria-label="Carousel controls" aria-controls="journey-slides">
-                <div class="journey-side-controls">
-                    <button class="journey-prev" type="button" aria-label="Previous slide" title="Previous slide">
-                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"></path></svg>
-                    </button>
-                    <button class="journey-play" type="button" aria-label="Pause automatic slides" title="Pause automatic slides">
-                        <svg class="pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10m6-10v10"></path></svg>
-                        <svg class="play-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6V4Z"></path></svg>
-                    </button>
-                </div>
+            <div class="journey-controls" aria-controls="journey-slides">
                 <div class="journey-pagination" role="group" aria-label="Choose a slide">
                     <button type="button" aria-label="Show introduction" aria-current="step"></button>
                     <button type="button" aria-label="Show systems thinking"></button>
@@ -200,9 +191,18 @@
                     <button type="button" aria-label="Show business and product"></button>
                     <button type="button" aria-label="Show projects"></button>
                 </div>
-                <button class="journey-next journey-next-control" type="button" aria-label="Next slide" title="Next slide">
-                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6"></path></svg>
-                </button>
+                <div class="journey-actions">
+                    <button class="journey-play" type="button" aria-label="Pause automatic slides" title="Pause automatic slides">
+                        <svg class="pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10m6-10v10"></path></svg>
+                        <svg class="play-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6V4Z"></path></svg>
+                    </button>
+                    <button class="journey-prev" type="button" aria-label="Previous slide" title="Previous slide">
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"></path></svg>
+                    </button>
+                    <button class="journey-next" type="button" aria-label="Next slide" title="Next slide">
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6"></path></svg>
+                    </button>
+                </div>
             </div>
         </section>
 
