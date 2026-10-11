@@ -15,6 +15,18 @@ The shared navigation stays pinned at the top while scrolling. After a short scr
 
 A circular back-to-top control appears as you scroll and tracks page progress around its arrow.
 
+## Search engine setup
+
+The public pages include canonical URLs, and the repository includes `robots.txt` and `sitemap.xml` for `https://mgashry.com`. The homepage also provides Person structured data linked to the published LinkedIn profile.
+
+After deploying these files over HTTPS:
+
+1. Add and verify `mgashry.com` in [Google Search Console](https://search.google.com/search-console/).
+2. Submit `https://mgashry.com/sitemap.xml` in Search Console and use URL Inspection to request indexing of the homepage.
+3. Add substantive project descriptions and outcomes to `projects.html`; its current coming-soon content gives searchers little project-specific information.
+
+These steps help Google discover and understand the pages, but indexing and search ranking are determined by Google and cannot be guaranteed.
+
 ## Preview locally
 
 Open `index.html` in a browser, or serve the repository directory with any static file server.
