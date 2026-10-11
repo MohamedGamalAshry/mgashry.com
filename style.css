@@ -141,14 +141,12 @@ a:focus-visible {
 }
 
 .main-nav a,
-.text-link,
-.back-to-top {
+.text-link {
     transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
 }
 
 .main-nav a:hover,
-.text-link:hover,
-.back-to-top:hover {
+.text-link:hover {
     color: var(--text);
 }
 
@@ -260,8 +258,7 @@ a:focus-visible {
 
 .eyebrow,
 .section-index,
-.scroll-cue,
-.back-to-top {
+.scroll-cue {
     font-family: var(--mono);
     font-size: 0.66rem;
     letter-spacing: 0.1em;
@@ -776,8 +773,72 @@ a:focus-visible {
 }
 
 .back-to-top {
-    color: var(--muted);
-    font-size: 0.58rem;
+    position: fixed;
+    z-index: 8;
+    right: max(24px, calc((100vw - 1160px) / 2));
+    bottom: 28px;
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border: 1px solid rgba(131, 170, 255, 0.22);
+    border-radius: 50%;
+    background: rgba(13, 20, 39, 0.92);
+    color: var(--blue);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    backdrop-filter: blur(12px);
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    border-color: rgba(131, 170, 255, 0.7);
+    box-shadow: 0 0 24px rgba(91, 151, 255, 0.22);
+    color: var(--text);
+}
+
+.back-to-top svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.scroll-progress-track,
+.scroll-progress-ring {
+    fill: none;
+    stroke-width: 2;
+}
+
+.scroll-progress-track {
+    stroke: rgba(131, 170, 255, 0.2);
+}
+
+.scroll-progress-ring {
+    stroke: var(--blue);
+    stroke-dasharray: 125.664;
+    stroke-dashoffset: 125.664;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 24px 24px;
+    transition: stroke-dashoffset 100ms linear;
+}
+
+.back-to-top-arrow {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
 }
 
 .coming-soon-page {

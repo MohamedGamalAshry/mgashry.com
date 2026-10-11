@@ -13,6 +13,8 @@ The legal pages describe the site's current features and third-party links. Revi
 
 The shared navigation stays pinned at the top while scrolling. After a short scroll, the name collapses and the navigation pills expand; on narrow screens, a keyboard-accessible menu button opens the navigation. The homepage hero animates in, sections reveal gently as they enter view, and cards and buttons respond to pointer interaction. Reduced-motion preferences are respected.
 
+A circular back-to-top control appears as you scroll and tracks page progress around its arrow.
+
 ## Preview locally
 
 Open `index.html` in a browser, or serve the repository directory with any static file server.

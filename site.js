@@ -1,5 +1,36 @@
 const siteHeader = document.querySelector(".site-header");
 
+const backToTop = document.querySelector(".back-to-top");
+
+if (backToTop) {
+    const progressRing = backToTop.querySelector(".scroll-progress-ring");
+    const circumference = 2 * Math.PI * 20;
+    let progressUpdateRequested = false;
+
+    const updateScrollProgress = () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight)) : 0;
+
+        backToTop.classList.toggle("is-visible", window.scrollY > 160);
+
+        if (progressRing instanceof SVGCircleElement) {
+            progressRing.style.strokeDashoffset = String(circumference * (1 - progress));
+        }
+
+        progressUpdateRequested = false;
+    };
+
+    const scheduleScrollProgressUpdate = () => {
+        if (progressUpdateRequested) return;
+        progressUpdateRequested = true;
+        window.requestAnimationFrame(updateScrollProgress);
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", scheduleScrollProgressUpdate, { passive: true });
+    window.addEventListener("resize", scheduleScrollProgressUpdate);
+}
+
 if (siteHeader) {
     const navToggle = siteHeader.querySelector(".nav-toggle");
     const mainNav = siteHeader.querySelector(".main-nav");

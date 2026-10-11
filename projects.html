@@ -17,7 +17,7 @@
 <body class="coming-soon-page">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
+    <header class="site-header" id="top">
         <a class="wordmark" href="index.html" aria-label="Mohamed Gamal Ashry, home">Mohamed Gamal Ashry</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu">
             <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -64,7 +64,13 @@
         <div class="site-footer-main section-shell">
             <a class="wordmark" href="index.html" aria-label="Mohamed Gamal Ashry, home">Mohamed Gamal Ashry</a>
             <p>Think clearly. Build thoughtfully.</p>
-            <a class="back-to-top" href="#main">BACK TO TOP ↑</a>
+            <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
+                <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                    <circle class="scroll-progress-track" cx="24" cy="24" r="20"></circle>
+                    <circle class="scroll-progress-ring" cx="24" cy="24" r="20"></circle>
+                    <path class="back-to-top-arrow" d="M24 31V17m-6 6 6-6 6 6"></path>
+                </svg>
+            </a>
         </div>
         <div class="legal-bar">
             <div class="legal-bar-inner section-shell">
