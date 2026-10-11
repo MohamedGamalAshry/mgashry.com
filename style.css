@@ -451,93 +451,239 @@ a:focus-visible {
     min-height: 410px;
 }
 
-.intro-orbit {
+.approach-panel {
     position: absolute;
-    width: min(78%, 330px);
-    aspect-ratio: 1;
-    border: 1px solid rgba(131, 170, 255, 0.2);
+    width: 100%;
+    padding: 1.15rem;
+    overflow: hidden;
+    border: 1px solid rgba(145, 177, 235, 0.2);
+    border-radius: 16px;
+    background:
+        radial-gradient(ellipse at 50% 48%, rgba(79, 118, 194, 0.13), transparent 50%),
+        linear-gradient(145deg, rgba(17, 27, 46, 0.98), rgba(10, 17, 30, 0.98));
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.approach-panel::before {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(138, 170, 228, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(138, 170, 228, 0.035) 1px, transparent 1px);
+    background-size: 25px 25px;
+    content: "";
+    mask-image: linear-gradient(120deg, black, transparent 82%);
+    pointer-events: none;
+}
+
+.approach-heading,
+.approach-footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.49rem;
+    letter-spacing: 0.075em;
+}
+
+.approach-heading {
+    color: #d4e0f4;
+}
+
+.approach-status {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #91a7c5;
+    font-size: 0.43rem;
+    white-space: nowrap;
+}
+
+.approach-status i {
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
+    background: #73e0bd;
+    box-shadow: 0 0 9px rgba(115, 224, 189, 0.55);
 }
 
-.orbit-one {
-    transform: rotateX(67deg) rotateZ(-24deg);
+.approach-diagram {
+    position: relative;
+    display: grid;
+    min-height: 250px;
+    grid-template-columns: 31% 1fr 22%;
+    align-items: center;
+    margin-block: 0.7rem;
 }
 
-.orbit-two {
-    width: min(92%, 390px);
-    border-color: rgba(77, 211, 194, 0.16);
-    transform: rotateX(67deg) rotateZ(34deg);
-}
-
-.intro-core {
+.approach-disciplines {
     position: relative;
     z-index: 1;
+    grid-column: 1;
     display: grid;
-    width: 112px;
-    aspect-ratio: 1;
-    place-items: center;
-    border: 1px solid rgba(131, 170, 255, 0.5);
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 25%, #2c4166, #111b30 72%);
-    box-shadow: 0 0 70px rgba(91, 132, 219, 0.24), inset 0 0 35px rgba(131, 170, 255, 0.12);
-    color: #e4edff;
-    font-size: 3.2rem;
+    gap: 1.15rem;
+}
+
+.approach-disciplines span {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.48rem;
+    color: #ccd7e9;
+    font-size: 0.62rem;
     font-weight: 500;
-    letter-spacing: -0.1em;
+    line-height: 1.2;
 }
 
-.orbit-node {
+.approach-disciplines i {
+    width: 6px;
+    height: 6px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--discipline-accent);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--discipline-accent) 52%, transparent);
+}
+
+.discipline-systems {
+    --discipline-accent: #83aaff;
+}
+
+.discipline-software {
+    --discipline-accent: #65d9e9;
+}
+
+.discipline-ai {
+    --discipline-accent: #bd9aff;
+}
+
+.discipline-product {
+    --discipline-accent: #f2bb72;
+}
+
+.approach-connections {
     position: absolute;
-    z-index: 2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.approach-connections path {
+    stroke: rgba(137, 174, 238, 0.38);
+    stroke-width: 1;
+}
+
+.approach-connections circle {
+    fill: #17243a;
+    stroke: #83aaff;
+    stroke-width: 1.5;
+}
+
+.approach-connections circle:nth-of-type(2) {
+    stroke: #65d9e9;
+}
+
+.approach-connections circle:nth-of-type(3) {
+    stroke: #bd9aff;
+}
+
+.approach-connections circle:nth-of-type(4) {
+    stroke: #f2bb72;
+}
+
+.approach-connections circle:nth-of-type(5) {
+    stroke: #73e0bd;
+}
+
+.approach-connections circle:nth-of-type(6) {
+    fill: #131e33;
+    stroke: rgba(131, 170, 255, 0.4);
+}
+
+.approach-connections circle:nth-of-type(7) {
+    fill: none;
+    stroke: rgba(198, 218, 255, 0.72);
+    stroke-width: 1.2;
+}
+
+.approach-connections .approach-core-dot {
+    fill: #a9c8ff;
+    stroke: none;
+}
+
+.approach-connections .approach-outcome-line {
+    stroke: rgba(115, 224, 189, 0.72);
+}
+
+.approach-core-label {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    z-index: 1;
+    color: #e0eaff;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    transform: translate(-50%, -50%);
+}
+
+.approach-outcome {
+    position: relative;
+    z-index: 1;
+    grid-column: 3;
     display: grid;
-    min-width: 100px;
-    min-height: 38px;
-    place-items: center;
-    padding-inline: 0.75rem;
-    border: 1px solid rgba(145, 177, 235, 0.24);
-    border-radius: 999px;
-    background: rgba(15, 24, 42, 0.95);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
-    color: #dbe6fb;
+    justify-items: start;
+    gap: 0.4rem;
+    padding-left: 0.45rem;
+}
+
+.approach-outcome svg {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0.25rem;
+    padding: 5px;
+    border: 1px solid rgba(115, 224, 189, 0.3);
+    border-radius: 50%;
+    background: rgba(115, 224, 189, 0.07);
+    stroke: #8ae4c3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+.approach-outcome > span {
+    color: #91cdb8;
     font-family: var(--mono);
-    font-size: 0.56rem;
-    letter-spacing: 0.07em;
+    font-size: 0.4rem;
+    letter-spacing: 0.055em;
 }
 
-.node-systems {
-    top: 14%;
-    left: 17%;
+.approach-outcome strong {
+    color: #e9f7f1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
 }
 
-.node-software {
-    top: 21%;
-    right: 6%;
-    color: #83e5f0;
+.approach-footer {
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(161, 189, 234, 0.13);
+    color: #7e91ad;
+    font-size: 0.4rem;
+    white-space: nowrap;
 }
 
-.node-ai {
-    right: 12%;
-    bottom: 15%;
-    color: #d0b8ff;
-}
-
-.node-product {
-    bottom: 10%;
-    left: 10%;
-    color: #f2c688;
-}
-
-.orbit-center-label {
-    position: absolute;
-    bottom: 3%;
-    left: 50%;
-    color: #7587a4;
-    font-family: var(--mono);
-    font-size: 0.52rem;
-    letter-spacing: 0.09em;
-    line-height: 1.8;
-    text-align: center;
-    transform: translateX(-50%);
+.approach-footer i {
+    width: 3px;
+    height: 3px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #83aaff;
 }
 
 .network-visual svg {
@@ -1002,25 +1148,6 @@ a:focus-visible {
     to {
         opacity: 1;
         translate: 0 0;
-    }
-}
-
-.journey-intro.is-active .orbit-one {
-    animation: orbit-float 9s ease-in-out infinite;
-}
-
-.journey-intro.is-active .orbit-two {
-    animation: orbit-float 11s ease-in-out -2s infinite reverse;
-}
-
-@keyframes orbit-float {
-    0%,
-    100% {
-        rotate: 0deg;
-    }
-
-    50% {
-        rotate: 8deg;
     }
 }
 
@@ -2063,35 +2190,67 @@ a:focus-visible {
         min-height: 280px;
     }
 
-    .intro-core {
-        width: 78px;
-        font-size: 2.4rem;
+    .approach-panel {
+        padding: 0.85rem;
     }
 
-    .orbit-node {
-        min-width: 82px;
-        min-height: 30px;
-        font-size: 0.46rem;
+    .approach-heading {
+        font-size: 0.43rem;
     }
 
-    .node-systems {
-        left: 6%;
+    .approach-status {
+        font-size: 0.36rem;
     }
 
-    .node-software {
-        right: 0;
+    .approach-diagram {
+        min-height: 230px;
+        margin-block: 0.35rem;
     }
 
-    .node-ai {
-        right: 3%;
+    .approach-disciplines {
+        gap: 1rem;
     }
 
-    .node-product {
-        left: 2%;
+    .approach-disciplines span {
+        gap: 0.32rem;
+        font-size: 0.53rem;
     }
 
-    .orbit-center-label {
-        font-size: 0.45rem;
+    .approach-disciplines i {
+        width: 5px;
+        height: 5px;
+    }
+
+    .approach-core-label {
+        font-size: 0.54rem;
+    }
+
+    .approach-outcome {
+        gap: 0.3rem;
+        padding-left: 0.2rem;
+    }
+
+    .approach-outcome svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .approach-outcome > span {
+        font-size: 0.34rem;
+    }
+
+    .approach-outcome strong {
+        font-size: 0.66rem;
+    }
+
+    .approach-footer {
+        gap: 0.32rem;
+        font-size: 0.35rem;
+    }
+
+    .approach-footer i {
+        width: 2px;
+        height: 2px;
     }
 
     .journey-controls {
@@ -2199,8 +2358,6 @@ a:focus-visible {
 
     .journey-slide.is-active .journey-copy,
     .journey-slide.is-active .journey-visual,
-    .journey-intro.is-active .orbit-one,
-    .journey-intro.is-active .orbit-two,
     .rocket,
     .rocket-flame,
     .rocket-star {
