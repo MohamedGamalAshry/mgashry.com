@@ -893,21 +893,35 @@ a:focus-visible {
 
 .journey-controls {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     padding: 1.2rem 0.4rem 0;
+}
+
+.journey-side-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.journey-next-control {
+    justify-self: end;
 }
 
 .journey-pagination {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    margin-inline: 0.15rem;
 }
 
 .journey-pagination button {
-    width: 24px;
-    height: 24px;
+    display: grid;
+    width: 22px;
+    height: 38px;
+    flex: 0 0 auto;
+    place-items: center;
     padding: 0;
     border: 0;
     background: transparent;
@@ -916,34 +930,27 @@ a:focus-visible {
 
 .journey-pagination button::before {
     display: block;
-    width: 7px;
-    height: 7px;
-    margin: auto;
+    width: 8px;
+    height: 8px;
     border: 1px solid rgba(161, 189, 234, 0.52);
     border-radius: 50%;
-    background: transparent;
+    background: rgba(161, 189, 234, 0.08);
     content: "";
-    transition: width 180ms ease, border-color 180ms ease, border-radius 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .journey-pagination button[aria-current="step"]::before {
-    width: 22px;
     border-color: var(--journey-accent);
-    border-radius: 999px;
     background: var(--journey-accent);
     box-shadow: 0 0 14px rgba(131, 170, 255, 0.34);
 }
 
-.journey-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.45rem;
-}
-
-.journey-actions button {
+.journey-controls > button,
+.journey-side-controls button {
     display: grid;
     width: 38px;
     height: 38px;
+    flex: 0 0 auto;
     place-items: center;
     padding: 0;
     border: 1px solid rgba(131, 170, 255, 0.22);
@@ -954,14 +961,16 @@ a:focus-visible {
     transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
-.journey-actions button:hover {
+.journey-controls > button:hover,
+.journey-side-controls button:hover {
     transform: translateY(-2px);
     border-color: rgba(131, 170, 255, 0.65);
     background: rgba(131, 170, 255, 0.14);
     color: #fff;
 }
 
-.journey-actions button svg {
+.journey-controls > button svg,
+.journey-side-controls button svg {
     width: 18px;
     height: 18px;
     fill: none;
@@ -2095,31 +2104,28 @@ a:focus-visible {
     }
 
     .journey-controls {
-        grid-template-columns: 1fr auto;
-        gap: 0.65rem;
-        padding: 0.9rem 0.1rem 0;
+        gap: 0.08rem;
+        padding: 0.9rem 0 0;
+    }
+
+    .journey-side-controls {
+        gap: 0.12rem;
     }
 
     .journey-pagination {
-        gap: 0.2rem;
+        gap: 0.08rem;
+        margin-inline: 0;
     }
 
     .journey-pagination button {
-        width: 20px;
-        height: 24px;
+        width: 18px;
+        height: 36px;
     }
 
-    .journey-pagination button[aria-current="step"]::before {
-        width: 17px;
-    }
-
-    .journey-actions {
-        gap: 0.3rem;
-    }
-
-    .journey-actions button {
-        width: 34px;
-        height: 34px;
+    .journey-controls > button,
+    .journey-side-controls button {
+        width: 32px;
+        height: 32px;
     }
 
     .coming-soon-main {
