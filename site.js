@@ -20,7 +20,7 @@ if (journey) {
         let focused = false;
         let inViewport = false;
         let autoplayTimer;
-        let scrollUpdateRequested = false;
+        let scrollSyncTimer;
 
         const updateAutoplayState = () => {
             const autoplayEnabled = !userPaused && !hovered && !focused && inViewport && !reducedMotion.matches && !document.hidden;
@@ -57,7 +57,6 @@ if (journey) {
         };
 
         const syncActiveSlideToScroll = () => {
-            scrollUpdateRequested = false;
             if (!track.clientWidth) return;
             const nextIndex = Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / track.clientWidth)));
 
@@ -67,9 +66,8 @@ if (journey) {
         };
 
         track.addEventListener("scroll", () => {
-            if (scrollUpdateRequested) return;
-            scrollUpdateRequested = true;
-            window.requestAnimationFrame(syncActiveSlideToScroll);
+            window.clearTimeout(scrollSyncTimer);
+            scrollSyncTimer = window.setTimeout(syncActiveSlideToScroll, 160);
         }, { passive: true });
 
         pageButtons.forEach((button, index) => {
