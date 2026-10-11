@@ -19,7 +19,11 @@
 
     <header class="site-header">
         <a class="wordmark" href="#top" aria-label="Mohamed Gamal Ashry, home">Mohamed Gamal Ashry</a>
-        <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu">
+            <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="nav-toggle-label">Menu</span>
+        </button>
+        <nav class="main-nav" id="site-navigation" aria-label="Main navigation">
             <a href="#about">About</a>
             <a href="#focus">What I do</a>
             <a href="projects.html">Projects</a>
@@ -88,12 +92,10 @@
                     </div>
                 </div>
             </div>
-            <a class="scroll-cue" href="#about"><span class="scroll-line" aria-hidden="true"></span> SCROLL TO EXPLORE</a>
         </section>
 
         <section class="about section-shell section-block" id="about" aria-labelledby="about-title">
-            <div class="section-index">01 / ABOUT</div>
-            <div class="about-content">
+            <div class="about-content" data-reveal>
                 <h2 id="about-title">Curious by nature.<br><span>Practical by design.</span></h2>
                 <div class="about-details">
                     <p class="lead">The best solutions start with understanding the whole problem—not just the first thing that can be built.</p>
@@ -104,34 +106,33 @@
 
         <section class="focus section-block" id="focus" aria-labelledby="focus-title">
             <div class="section-shell">
-                <div class="section-index">02 / AREAS OF FOCUS</div>
-                <div class="focus-heading">
+                <div class="focus-heading" data-reveal>
                     <h2 id="focus-title">Where ideas<br>meet <span>execution.</span></h2>
                     <p>A few of the lenses I bring to a problem—and the space where they work best together.</p>
                 </div>
                 <div class="focus-grid">
-                    <article class="focus-card">
+                    <article class="focus-card" data-reveal>
                         <span class="card-number">01</span>
                         <div class="card-icon icon-systems" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
                         <h3>Systems thinking</h3>
                         <p>See the connections, understand the constraints, and find leverage in the bigger picture.</p>
                         <span class="card-arrow" aria-hidden="true">↗</span>
                     </article>
-                    <article class="focus-card">
+                    <article class="focus-card" data-reveal>
                         <span class="card-number">02</span>
                         <div class="card-icon icon-software" aria-hidden="true"><span>&lt;/&gt;</span></div>
                         <h3>Software engineering</h3>
                         <p>Turn clear ideas into dependable software, built with care for the people who use it.</p>
                         <span class="card-arrow" aria-hidden="true">↗</span>
                     </article>
-                    <article class="focus-card">
+                    <article class="focus-card" data-reveal>
                         <span class="card-number">03</span>
                         <div class="card-icon icon-ai" aria-hidden="true"><span>✳</span></div>
                         <h3>Applied AI</h3>
                         <p>Explore where intelligent tools can solve real problems and make better work possible.</p>
                         <span class="card-arrow" aria-hidden="true">↗</span>
                     </article>
-                    <article class="focus-card">
+                    <article class="focus-card" data-reveal>
                         <span class="card-number">04</span>
                         <div class="card-icon icon-business" aria-hidden="true"><span></span></div>
                         <h3>Business &amp; product</h3>
@@ -143,8 +144,7 @@
         </section>
 
         <section class="contact section-shell section-block" id="contact" aria-labelledby="contact-title">
-            <div class="section-index">03 / NEXT</div>
-            <div class="contact-content">
+            <div class="contact-content" data-reveal>
                 <p class="eyebrow">GOOD THINGS START WITH A CONVERSATION</p>
                 <h2 id="contact-title">Have a problem<br>worth <span>solving?</span></h2>
                 <p>I’m always interested in thoughtful conversations about technology, ideas, and building things that matter.</p>

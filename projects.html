@@ -19,7 +19,11 @@
 
     <header class="site-header">
         <a class="wordmark" href="index.html" aria-label="Mohamed Gamal Ashry, home">Mohamed Gamal Ashry</a>
-        <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu">
+            <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="nav-toggle-label">Menu</span>
+        </button>
+        <nav class="main-nav" id="site-navigation" aria-label="Main navigation">
             <a href="index.html#about">About</a>
             <a href="index.html#focus">What I do</a>
             <a href="projects.html" aria-current="page">Projects</a>

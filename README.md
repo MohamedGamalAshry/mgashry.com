@@ -11,7 +11,7 @@ A responsive personal website for Mohamed Gamal Ashry. It uses plain HTML, CSS, 
 
 The legal pages describe the site's current features and third-party links. Review them against your hosting setup and applicable requirements before relying on them as formal legal documents. Update the copyright year in the page footers when needed.
 
-The shared navigation stays pinned at the top while scrolling. After a short scroll, the name collapses and the navigation pills expand; the Projects "Coming soon" status also highlights on hover.
+The shared navigation stays pinned at the top while scrolling. After a short scroll, the name collapses and the navigation pills expand; on narrow screens, a keyboard-accessible menu button opens the navigation. The homepage hero animates in, sections reveal gently as they enter view, and cards and buttons respond to pointer interaction. Reduced-motion preferences are respected.
 
 ## Preview locally
 
