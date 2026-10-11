@@ -122,6 +122,43 @@ if (journey) {
     }
 }
 
+const approachDiagram = document.querySelector(".approach-diagram");
+
+if (approachDiagram) {
+    const approachSvg = approachDiagram.querySelector(".approach-connections");
+    const approachCore = approachDiagram.querySelector(".approach-core-label");
+    const approachDots = Array.from(approachDiagram.querySelectorAll(".approach-disciplines i"));
+    const approachLines = Array.from(approachDiagram.querySelectorAll(".approach-input-line"));
+
+    if (approachSvg && approachCore && approachDots.length === approachLines.length) {
+        const updateApproachConnections = () => {
+            const svgBounds = approachSvg.getBoundingClientRect();
+            const coreBounds = approachCore.getBoundingClientRect();
+            const ringWidth = parseFloat(getComputedStyle(approachCore, "::before").width);
+            const targetX = (coreBounds.left + coreBounds.width / 2 - ringWidth / 2 - svgBounds.left) / svgBounds.width * 480;
+            const targetY = (coreBounds.top + coreBounds.height / 2 - svgBounds.top) / svgBounds.height * 250;
+
+            approachDots.forEach((dot, index) => {
+                const dotBounds = dot.getBoundingClientRect();
+                const startX = (dotBounds.left + dotBounds.width / 2 - svgBounds.left) / svgBounds.width * 480;
+                const startY = (dotBounds.top + dotBounds.height / 2 - svgBounds.top) / svgBounds.height * 250;
+                const controlX = startX + (targetX - startX) * 0.55;
+                approachLines[index].setAttribute("d", `M${startX} ${startY} C${controlX} ${startY} ${controlX} ${targetY} ${targetX} ${targetY}`);
+            });
+        };
+
+        updateApproachConnections();
+        if ("ResizeObserver" in window) {
+            new ResizeObserver(updateApproachConnections).observe(approachDiagram);
+        } else {
+            window.addEventListener("resize", updateApproachConnections);
+        }
+        if (document.fonts) {
+            document.fonts.ready.then(updateApproachConnections);
+        }
+    }
+}
+
 const backToTop = document.querySelector(".back-to-top");
 
 if (backToTop) {
